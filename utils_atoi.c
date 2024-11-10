@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 13:24:46 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/10 16:21:31 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/10 17:29:59 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ int	ft_atoi_error(char *str, int *num)
 			result = result * 10 + (*str - '0');
 		else
 			return (-1);
-		if ((sign == 1 && result > INT_MAX) || (sign == -1 &&
-				-result < INT_MIN))
+		if ((sign == 1 && result > INT_MAX)
+			|| (sign == -1 && (-1 * result) < INT_MIN))
 			return (-1);
 		str++;
 	}

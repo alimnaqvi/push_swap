@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 16:20:57 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/10 16:26:00 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/10 17:26:23 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ char	**ft_split(char *s, char c)
 	return (result);
 }
 
-void free_splits(char** splits)
+void	free_splits(char **splits)
 {
 	if (!splits)
 		return ;

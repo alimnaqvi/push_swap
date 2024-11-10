@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:56:03 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/10 17:15:45 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/10 17:27:00 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	num_is_in_list(t_list *lst, int num)
 int	is_sorted(t_list *lst)
 {
 	t_list	*current;
-	
+
 	if (current->next == NULL)
 		return (1);
 	while (current->next)
