@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:56:03 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/10 17:51:53 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/10 18:06:34 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	if (!lst)
 		return ;
 	last = *lst;
-	while (last->next != NULL)
+	while (last && last->next)
 		last = last->next;
 	if (!last)
 		*lst = new;
