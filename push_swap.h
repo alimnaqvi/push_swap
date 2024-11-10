@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 11:59:52 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/10 17:44:48 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/10 20:54:07 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ int					parse_only_one_param(char *str, t_list **stack_a);
 int					ft_atoi_error(char *str, int *num);
 
 int					sort_and_display_ops(t_list **stack_a, t_list **stack_b);
+
+void				swap(t_list **lst, char *str);
+void				push(t_list **lst1, t_list **lst2, char *str);
 
 char				**ft_split(char *s, char c);
 
