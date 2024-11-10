@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:55:47 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/10 16:47:32 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/10 16:49:48 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,6 @@ int	parse_args_make_list(int argc, char **argv, t_list **stack_a)
 	int		num;
 	t_list	*current;
 
-	/* goes through arguments and adds them to stack a, returns
-		-1 in case of error at any point (invalid argument, malloc failure,
-		etc.) does not free the so far malloced list,
-		in case of error (handled by main) */
 	i = 1;
 	while (i < argc)
 	{
