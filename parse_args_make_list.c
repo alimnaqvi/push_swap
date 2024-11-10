@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:55:47 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/10 17:44:40 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/10 18:33:46 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,14 +39,20 @@ int	parse_args_make_list(int argc, char **argv, t_list **stack_a)
 	return (0);
 }
 
-static void	free_splits(char **splits)
+static void	free_splits(char ***splits)
 {
-	if (!splits)
+	int	i;
+
+	if (!*splits)
 		return ;
-	while (*splits)
-		free(*splits++);
-	free(splits);
-	splits = NULL;
+	i = 0;
+	while ((*splits)[i])
+	{
+		free((*splits)[i]);
+		i++;
+	}
+	free(*splits);
+	*splits = NULL;
 }
 
 int	parse_only_one_param(char *str, t_list **stack_a)
@@ -63,17 +69,17 @@ int	parse_only_one_param(char *str, t_list **stack_a)
 	while (splits[i])
 	{
 		if (ft_atoi_error(splits[i++], &num) == -1)
-			return (free_splits(splits), -1);
+			return (free_splits(&splits), -1);
 		else
 		{
 			if (num_is_in_list(*stack_a, num))
-				return (free_splits(splits), -1);
+				return (free_splits(&splits), -1);
 			current = ft_lstnew(num);
 			if (!current)
-				return (free_splits(splits), -1);
+				return (free_splits(&splits), -1);
 			ft_lstadd_back(stack_a, current);
 		}
 	}
-	free_splits(splits);
+	free_splits(&splits);
 	return (0);
 }
