@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 11:59:52 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/09 15:51:54 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/10 13:16:56 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ typedef struct s_list
 
 int					parse_args_make_list(int argc, char **argv, t_list **lst);
 
-int					sort_and_display_ops(t_list **lst);
+int					sort_and_display_ops(t_list **stack_a, t_list **stack_b);
 
 int					is_sorted(t_list *lst);
 void				free_stack(t_list **lst);
