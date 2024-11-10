@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:56:03 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/10 17:27:00 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/10 17:51:53 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int	is_sorted(t_list *lst)
 {
 	t_list	*current;
 
+	current = lst;
 	if (current->next == NULL)
 		return (1);
 	while (current->next)

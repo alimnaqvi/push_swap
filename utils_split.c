@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/10 16:20:57 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/10 17:26:23 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/10 17:50:33 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,29 @@ static size_t	count_words(char const *s, char c)
 	return (count);
 }
 
-static char	*get_next_word(char const **s, char c)
+static size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+{
+	size_t	srclen;
+
+	srclen = 0;
+	while (src[srclen])
+		srclen++;
+	if (dstsize > 0)
+	{
+		dstsize--;
+		while (dstsize > 0 && *src)
+		{
+			*dst = *src;
+			dst++;
+			src++;
+			dstsize--;
+		}
+		*dst = '\0';
+	}
+	return (srclen);
+}
+
+static char	*get_next_word(char **s, char c)
 {
 	char		*word;
 	size_t		len;
@@ -90,14 +112,4 @@ char	**ft_split(char *s, char c)
 	}
 	result[i] = NULL;
 	return (result);
-}
-
-void	free_splits(char **splits)
-{
-	if (!splits)
-		return ;
-	while (*splits)
-		free(*splits++);
-	free(splits);
-	splits = NULL;
 }

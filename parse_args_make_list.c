@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:55:47 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/10 17:26:39 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/10 17:44:40 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,16 @@ int	parse_args_make_list(int argc, char **argv, t_list **stack_a)
 		i++;
 	}
 	return (0);
+}
+
+static void	free_splits(char **splits)
+{
+	if (!splits)
+		return ;
+	while (*splits)
+		free(*splits++);
+	free(splits);
+	splits = NULL;
 }
 
 int	parse_only_one_param(char *str, t_list **stack_a)
