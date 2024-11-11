@@ -1,10 +1,13 @@
 CC = cc
+
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = push_swap.c # to be completed
+SRCS = main.c parse_args_make_list.c sort_and_display_ops.c \
+	   push_swap.c utils_atoi.c utils_split.c utils_list.c
+
 OBJS = $(SRCS:.c=.o)
 
-NAME = push_swap # or should it be a different name?
+NAME = push_swap
 
 all: $(NAME)
 
