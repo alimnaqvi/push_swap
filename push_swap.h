@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 11:59:52 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/10 21:58:14 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/12 18:52:02 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ int					parse_only_one_param(char *str, t_list **stack_a);
 
 int					ft_atoi_error(char *str, int *num);
 
+int					simplify_data(t_list *lst);
 int					sort_and_display_ops(t_list **stack_a, t_list **stack_b);
 
 void				swap(t_list **lst, char *str);
@@ -41,5 +42,6 @@ t_list				*ft_lstnew(int num);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 int					num_is_in_list(t_list *lst, int num);
 int					is_sorted(t_list *lst);
+unsigned int		ft_lstsize(t_list *lst);
 
 #endif

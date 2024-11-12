@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:56:03 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/10 18:06:34 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/12 18:23:22 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,21 @@ int	is_sorted(t_list *lst)
 		current = current->next;
 	}
 	return (1);
+}
+
+unsigned int	ft_lstsize(t_list *lst)
+{
+	unsigned int	count;
+	t_list			*current;
+
+	count = 0;
+	if (!lst)
+		return (count);
+	current = lst;
+	while (current)
+	{
+		count++;
+		current = current->next;
+	}
+	return (count);
 }

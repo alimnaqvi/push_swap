@@ -6,12 +6,19 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:56:25 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/10 21:55:57 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/12 19:11:25 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+int	sort_and_display_ops(t_list **stack_a, t_list **stack_b)
+{
+	//
+}
+
+// Initial bubble sort
+/*
 int	sort_and_display_ops(t_list **stack_a, t_list **stack_b)
 {
 	while (!is_sorted(*stack_a) || *stack_b)
@@ -31,3 +38,4 @@ int	sort_and_display_ops(t_list **stack_a, t_list **stack_b)
 	}
 	return (0);
 }
+*/
