@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 12:14:26 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/12 19:32:42 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/12 19:37:22 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,29 +37,29 @@ static void	ft_exit(int exit_status, t_list **stack_a, t_list **stack_b)
 	exit(EXIT_FAILURE);
 }
 
-#include <stdio.h>
-void check_print_list_exit(t_list *stack_a, t_list *stack_b)
-{
-	t_list *current = stack_a;
-	printf("Numbers saved in the stack a:\n");
-	while (current)
-	{
-		printf("%i  ", current->num);
-		current = current->next;
-	}
-	printf("\n");
+// #include <stdio.h>
+// void check_print_list_exit(t_list *stack_a, t_list *stack_b)
+// {
+// 	t_list *current = stack_a;
+// 	printf("Numbers saved in the stack a:\n");
+// 	while (current)
+// 	{
+// 		printf("%i  ", current->num);
+// 		current = current->next;
+// 	}
+// 	printf("\n");
 
-	current = stack_b;
-	printf("Numbers saved in the stack b:\n");
-	while (current)
-	{
-		printf("%i  ", current->num);
-		current = current->next;
-	}
-	printf("\n");
+// 	current = stack_b;
+// 	printf("Numbers saved in the stack b:\n");
+// 	while (current)
+// 	{
+// 		printf("%i  ", current->num);
+// 		current = current->next;
+// 	}
+// 	printf("\n");
 
-	ft_exit(0, &stack_a, &stack_b);
-}
+// 	ft_exit(0, &stack_a, &stack_b);
+// }
 
 int	main(int argc, char **argv)
 {
@@ -76,7 +76,7 @@ int	main(int argc, char **argv)
 		ft_exit(0, &stack_a, &stack_b);
 	if (simplify_data(stack_a) == -1)
 		ft_exit(1, &stack_a, &stack_b);
-	check_print_list_exit(stack_a, stack_b); // delete
+	// check_print_list_exit(stack_a, stack_b); // delete
 	if (sort_and_display_ops(&stack_a, &stack_b) == -1) // change to void if always returns 0
 		ft_exit(1, &stack_a, &stack_b);
 	ft_exit(0, &stack_a, &stack_b);
