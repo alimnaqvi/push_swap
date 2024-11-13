@@ -6,17 +6,17 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:10:51 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/12 19:33:56 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/13 11:27:35 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	sort_array(int **arr, int arr_size)
+static void	sort_array(int **arr, unsigned int arr_size)
 {
-	int	swapped;
-	int	temp;
-	int	i;
+	int				swapped;
+	int				temp;
+	unsigned int	i;
 
 	swapped = 1;
 	while (swapped)
@@ -39,11 +39,11 @@ static void	sort_array(int **arr, int arr_size)
 
 static int	*create_sorted_array(t_list *lst, unsigned int list_size)
 {
-	int		*arr;
-	t_list	*current;
-	int		i;
-	int		swapped;
-	int		temp;
+	int				*arr;
+	t_list			*current;
+	unsigned int	i;
+	int				swapped;
+	int				temp;
 
 	arr = malloc(sizeof(int) * list_size);
 	if (!arr)
@@ -64,7 +64,7 @@ int	simplify_data(t_list *lst)
 	unsigned int	list_size;
 	t_list			*current;
 	int				*arr;
-	int				index;
+	unsigned int	index;
 
 	list_size = ft_lstsize(lst);
 	arr = create_sorted_array(lst, list_size);

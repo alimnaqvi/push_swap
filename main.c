@@ -6,13 +6,13 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 12:14:26 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/12 19:37:22 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/13 15:57:37 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	free_stack(t_list **lst)
+void	free_stack(t_list **lst)
 {
 	t_list	*current;
 
