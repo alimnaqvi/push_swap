@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 11:59:52 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/13 15:57:59 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/14 18:01:47 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void				free_stack(t_list **lst);
 
 int					ft_atoi_error(char *str, int *num);
 
-int					simplify_data(t_list *lst);
-int					sort_and_display_ops(t_list **stack_a, t_list **stack_b);
+int					simplify_data(t_list *lst, unsigned int list_size);
+int					sort_and_display_ops(t_list **stack_a, t_list **stack_b, unsigned int list_size);
 
 int					swap(t_list **stack, int op, t_list **ops_list);
 int					push(t_list **stack_1, t_list **stack_2, int op, t_list **ops_list);

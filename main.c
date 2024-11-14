@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 12:14:26 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/13 15:57:37 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/14 18:01:32 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,8 +63,9 @@ static void	ft_exit(int exit_status, t_list **stack_a, t_list **stack_b)
 
 int	main(int argc, char **argv)
 {
-	t_list	*stack_a;
-	t_list	*stack_b;
+	t_list			*stack_a;
+	t_list			*stack_b;
+	unsigned int	list_size;
 
 	if (argc < 2)
 		return (0);
@@ -74,10 +75,11 @@ int	main(int argc, char **argv)
 		ft_exit(1, &stack_a, &stack_b);
 	if (is_sorted(stack_a))
 		ft_exit(0, &stack_a, &stack_b);
-	if (simplify_data(stack_a) == -1)
+	list_size = ft_lstsize(stack_a);
+	if (simplify_data(stack_a, list_size) == -1)
 		ft_exit(1, &stack_a, &stack_b);
 	// check_print_list_exit(stack_a, stack_b); // delete
-	if (sort_and_display_ops(&stack_a, &stack_b) == -1) // change to void if always returns 0
+	if (sort_and_display_ops(&stack_a, &stack_b, list_size) == -1) // change to void if always returns 0
 		ft_exit(1, &stack_a, &stack_b);
 	ft_exit(0, &stack_a, &stack_b);
 	return (0);

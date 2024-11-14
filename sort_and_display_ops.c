@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:56:25 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/13 15:31:26 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/14 18:09:03 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,14 +47,14 @@ static void display_ops(t_list *ops_list)
 	}
 }
 
-static int pull_min_to_top(t_list **stack, unsigned int min, t_list **ops_list)
+static int pull_min_to_top(t_list **stack, unsigned int min, t_list **ops_list, unsigned int list_size)
 {
 	unsigned int min_pos;
 	t_list *min_node;
-	unsigned int lst_size;
-
 	min_node = *stack;
 	min_pos = 0;
+	int status;
+
 	while (min_node)
 	{
 		if (min_node->num == min)
@@ -62,18 +62,25 @@ static int pull_min_to_top(t_list **stack, unsigned int min, t_list **ops_list)
 		min_pos++;
 		min_node = min_node->next;
 	}
-	lst_size = ft_lstsize(*stack);
-	if (min_pos <= lst_size / 2)
+	if (min_pos <= list_size / 2)
 	{
 		while (*stack != min_node)
-			if (rotate(stack, 5, ops_list) == -1) // ra
-				return (-1);
+		{
+			if ((*stack)->num == ((*stack)->num) + 1) // or swap always when wrong order
+				status = swap(stack, 0, ops_list);
+			else
+				status = rotate(stack, 5, ops_list); // ra
+		}
 	}
 	else
 		while (*stack != min_node)
-			if (reverse_rotate(stack, 8, ops_list) == -1) // rra
-				return (-1);
-	return (0);
+		{
+			if ((*stack)->num == ((*stack)->num) + 1)
+				status = swap(stack, 0, ops_list);
+			else
+				status = reverse_rotate(stack, 8, ops_list); // rra
+		}
+	return (status);
 }
 
 static unsigned int find_min(t_list *stack)
@@ -92,33 +99,23 @@ static unsigned int find_min(t_list *stack)
 	return (min);
 }
 
-// Modified selection sort
-// mallocs a new list in which to save the operations
-// at the end, optimizes the operations then frees the the malloced list
-int	sort_and_display_ops(t_list **stack_a, t_list **stack_b)
+// static int divide_hi_mid_lo(t_list **stack_a, t_list **stack_b, t_list **ops_list)
+// {
+// 	//
+// }
+
+int	sort_and_display_ops(t_list **stack_a, t_list **stack_b, unsigned int list_size)
 {
-	// while (stack_a || stack_a is unsorted)
-		// Find smallest number (min_stack_a) in stack a
-		// If min_stack_a is in the first half, ra until it is on top
-		// else if min_stack_a is in the second half, rra until it is on top
-			// if during the way, two consecutive numbers appear in the wrong order
-			// swap them to correct the order
-		// then push_b
-	// while (stack_b)
-		// push_a
-	// call function to optimize the list of steps saved in a list
-		// replace with ss, rr, rrr when necessary
-		// remove neutral moves (e.g., pa + pb; sa + sa; ra + rra)
-	// display the optimized list of operations
-	// free the list of operations
 	unsigned int min;
 	t_list *ops_list;
 
 	ops_list = NULL;
+	if (divide_hi_mid_lo(stack_a, stack_b, &ops_list) == -1)
+		return (free_stack(&ops_list), -1);
 	while (!is_sorted(*stack_a) && *stack_a)
 	{
 		min = find_min(*stack_a);
-		if (pull_min_to_top(stack_a, min, &ops_list) == -1)
+		if (pull_min_to_top(stack_a, min, &ops_list, list_size) == -1)
 			return (free_stack(&ops_list), -1);
 		if (push(stack_a, stack_b, 4, &ops_list) == -1) // pb
 			return (free_stack(&ops_list), -1);
@@ -133,26 +130,3 @@ int	sort_and_display_ops(t_list **stack_a, t_list **stack_b)
 	free_stack(&ops_list);
 	return (0);
 }
-
-// Initial bubble sort
-/*
-int	sort_and_display_ops(t_list **stack_a, t_list **stack_b)
-{
-	while (!is_sorted(*stack_a) || *stack_b)
-	{
-		while (*stack_a)
-		{
-			if ((*stack_a)->next && (*stack_a)->num > (*stack_a)->next->num)
-				swap(stack_a, "sa");
-			push(stack_a, stack_b, "pb");
-		}
-		while (*stack_b)
-		{
-			if ((*stack_b)->next && (*stack_b)->num < (*stack_b)->next->num)
-				swap(stack_b, "sb");
-			push(stack_b, stack_a, "pa");
-		}
-	}
-	return (0);
-}
-*/

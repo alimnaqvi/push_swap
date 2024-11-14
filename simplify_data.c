@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:10:51 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/13 11:27:35 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/14 18:01:07 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,14 +59,12 @@ static int	*create_sorted_array(t_list *lst, unsigned int list_size)
 	return (arr);
 }
 
-int	simplify_data(t_list *lst)
+int	simplify_data(t_list *lst, unsigned int list_size)
 {
-	unsigned int	list_size;
 	t_list			*current;
 	int				*arr;
 	unsigned int	index;
 
-	list_size = ft_lstsize(lst);
 	arr = create_sorted_array(lst, list_size);
 	if (!arr)
 		return (-1);
