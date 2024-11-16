@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:10:51 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/14 18:01:07 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/16 15:40:47 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,6 @@ static int	*create_sorted_array(t_list *lst, unsigned int list_size)
 	int				*arr;
 	t_list			*current;
 	unsigned int	i;
-	int				swapped;
-	int				temp;
 
 	arr = malloc(sizeof(int) * list_size);
 	if (!arr)
