@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 12:14:26 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/14 19:43:00 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/17 11:46:15 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ int	main(int argc, char **argv)
 {
 	t_list			*stack_a;
 	t_list			*stack_b;
-	unsigned int	list_size;
+	int	list_size;
 
 	if (argc < 2)
 		return (0);
