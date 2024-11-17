@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 12:38:47 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/13 14:02:29 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/17 15:08:04 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ static void	del_next_change_num(t_list *current, int num)
 void	replace_double_op(t_list **ops_list)
 {
 	t_list	*current;
-	t_list	*temp;
 
 	current = *ops_list;
 	if (!current)
