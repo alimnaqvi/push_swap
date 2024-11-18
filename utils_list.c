@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:56:03 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/17 11:55:45 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/18 10:47:26 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ int	is_sorted(t_list *lst)
 
 int	ft_lstsize(t_list *lst)
 {
-	int	count;
-	t_list			*current;
+	int		count;
+	t_list	*current;
 
 	count = 0;
 	if (!lst)

@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/12 19:10:51 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/17 14:31:05 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/18 10:49:19 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 static void	sort_array(int **arr, int arr_size)
 {
-	int				swapped;
-	int				temp;
+	int	swapped;
+	int	temp;
 	int	i;
 
 	swapped = 1;
@@ -39,9 +39,9 @@ static void	sort_array(int **arr, int arr_size)
 
 static int	*create_sorted_array(t_list *lst, int list_size)
 {
-	int				*arr;
-	t_list			*current;
-	int	i;
+	int		*arr;
+	t_list	*current;
+	int		i;
 
 	arr = malloc(sizeof(int) * list_size);
 	if (!arr)
@@ -59,9 +59,9 @@ static int	*create_sorted_array(t_list *lst, int list_size)
 
 int	simplify_data(t_list *lst, int list_size)
 {
-	t_list			*current;
-	int				*arr;
-	int	index;
+	t_list	*current;
+	int		*arr;
+	int		index;
 
 	arr = create_sorted_array(lst, list_size);
 	if (!arr)

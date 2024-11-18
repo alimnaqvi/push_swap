@@ -6,14 +6,13 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 14:58:31 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/17 15:02:46 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/18 11:06:11 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static void	compute_rotts(int pos, int size, int *rotations,
-		char *direction)
+static void	compute_rotts(int pos, int size, int *rotations, char *direction)
 {
 	if (pos <= size / 2)
 	{
@@ -25,6 +24,20 @@ static void	compute_rotts(int pos, int size, int *rotations,
 		*rotations = size - pos;
 		*direction = 'd';
 	}
+}
+
+static t_list	*if_null_t_list(t_list *current)
+{
+	if (current)
+		return (current->next);
+	return (NULL);
+}
+
+static int	if_null_int(t_list *current, int if_not_null, int if_null)
+{
+	if (current)
+		return (if_not_null);
+	return (if_null);
 }
 
 static int	get_target_position_in_a(t_list *stack_a, int value)
@@ -44,13 +57,13 @@ static int	get_target_position_in_a(t_list *stack_a, int value)
 	i = 1;
 	while (i <= size)
 	{
-		curr_value = current ? current->num : stack_a->num;
+		curr_value = if_null_int(current, current->num, stack_a->num);
 		if ((value > prev_value && value < curr_value)
 			|| (prev_value > curr_value && (value > prev_value
 					|| value < curr_value)))
 			return (i % size);
 		prev_value = curr_value;
-		current = current ? current->next : NULL;
+		current = if_null_t_list(current);
 		i++;
 	}
 	return (find_min_pos(stack_a));
@@ -69,8 +82,7 @@ t_rotations	find_best_move(t_list *stack_a, t_list *stack_b, int size_a,
 	{
 		move.value = stack_b->num;
 		move.pos_b = pos_b;
-		compute_rotts(pos_b++, size_b, &move.rotations_b,
-			&move.direction_b);
+		compute_rotts(pos_b++, size_b, &move.rotations_b, &move.direction_b);
 		move.pos_a = get_target_position_in_a(stack_a, move.value);
 		compute_rotts(move.pos_a, size_a, &move.rotations_a, &move.direction_a);
 		if (move.direction_a == 'u' && move.direction_b == 'u')

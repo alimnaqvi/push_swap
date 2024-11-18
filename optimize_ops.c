@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/13 12:38:47 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/17 15:08:04 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/18 10:46:44 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,16 @@ static int	is_neutral_op(int a, int b)
 		return (1);
 	return (0);
 }
+
+// static void	del_next_two(t_list **current)
+// {
+// 	t_list *temp;
+
+// 	temp = (*current)->next->next->next;
+// 	free((*current)->next->next);
+// 	free((*current)->next);
+// 	(*current)->next = temp;
+// }
 
 void	remove_neutral_ops(t_list **ops_list)
 {
@@ -48,11 +58,7 @@ void	remove_neutral_ops(t_list **ops_list)
 	}
 	if (current && current->next && is_neutral_op(current->num,
 			current->next->num))
-	{
-		*ops_list = NULL;
-		free(current->next);
-		free(current);
-	}
+		return (*ops_list = NULL, free(current->next), free(current));
 }
 
 static void	del_next_change_num(t_list *current, int num)

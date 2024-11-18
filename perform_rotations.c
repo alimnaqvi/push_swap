@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/17 14:04:04 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/17 14:37:39 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/18 10:48:57 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ static int	handle_both_up(t_list **stack_a, t_list **stack_b,
 	int	status;
 
 	status = 0;
-	while (best_move.rotations_a > 0 && best_move.rotations_b > 0 && status !=
-		-1)
+	while (best_move.rotations_a > 0 && best_move.rotations_b > 0
+		&& status != -1)
 	{
 		status = rotate(stack_a, 5, ops_list);
 		if (status != -1)
@@ -40,8 +40,8 @@ static int	handle_both_down(t_list **stack_a, t_list **stack_b,
 	int	status;
 
 	status = 0;
-	while (best_move.rotations_a > 0 && best_move.rotations_b > 0 && status !=
-		-1)
+	while (best_move.rotations_a > 0 && best_move.rotations_b > 0
+		&& status != -1)
 	{
 		status = reverse_rotate(stack_a, 8, ops_list);
 		if (status != -1)
