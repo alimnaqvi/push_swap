@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 14:58:31 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/18 11:06:11 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/18 11:11:37 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ static t_list	*if_null_t_list(t_list *current)
 	return (NULL);
 }
 
-static int	if_null_int(t_list *current, int if_not_null, int if_null)
+static int	if_null_int(t_list *current, int if_null)
 {
 	if (current)
-		return (if_not_null);
+		return (current->num);
 	return (if_null);
 }
 
@@ -57,7 +57,7 @@ static int	get_target_position_in_a(t_list *stack_a, int value)
 	i = 1;
 	while (i <= size)
 	{
-		curr_value = if_null_int(current, current->num, stack_a->num);
+		curr_value = if_null_int(current, stack_a->num);
 		if ((value > prev_value && value < curr_value)
 			|| (prev_value > curr_value && (value > prev_value
 					|| value < curr_value)))
