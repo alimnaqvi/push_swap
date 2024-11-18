@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 14:58:31 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/18 11:11:37 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/18 12:49:53 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,18 +40,16 @@ static int	if_null_int(t_list *current, int if_null)
 	return (if_null);
 }
 
-static int	get_target_position_in_a(t_list *stack_a, int value)
+static int	get_target_position_in_a(t_list *stack_a, int value, int size)
 {
 	int		i;
 	t_list	*current;
-	int		size;
 	int		prev_value;
 	int		curr_value;
 
 	current = stack_a;
 	if (!stack_a)
 		return (0);
-	size = ft_lstsize(stack_a);
 	prev_value = stack_a->num;
 	current = stack_a->next;
 	i = 1;
@@ -83,7 +81,7 @@ t_rotations	find_best_move(t_list *stack_a, t_list *stack_b, int size_a,
 		move.value = stack_b->num;
 		move.pos_b = pos_b;
 		compute_rotts(pos_b++, size_b, &move.rotations_b, &move.direction_b);
-		move.pos_a = get_target_position_in_a(stack_a, move.value);
+		move.pos_a = get_target_position_in_a(stack_a, move.value, size_a);
 		compute_rotts(move.pos_a, size_a, &move.rotations_a, &move.direction_a);
 		if (move.direction_a == 'u' && move.direction_b == 'u')
 			move.total_moves = MAX(move.rotations_a, move.rotations_b);
