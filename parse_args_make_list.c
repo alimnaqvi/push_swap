@@ -6,7 +6,7 @@
 /*   By: anaqvi <anaqvi@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/09 14:55:47 by anaqvi            #+#    #+#             */
-/*   Updated: 2024/11/18 17:01:02 by anaqvi           ###   ########.fr       */
+/*   Updated: 2024/11/18 17:19:07 by anaqvi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ int	parse_only_one_param(char *str, t_list **stack_a)
 
 	splits = ft_split(str, ' ');
 	if (!splits || !*splits)
-		return (-1);
+		return (free_splits(&splits), -1);
 	i = 0;
 	while (splits[i])
 	{
