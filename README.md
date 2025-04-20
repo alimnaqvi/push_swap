@@ -1,10 +1,9 @@
-markdown
-# push_swap - 42 School Project
+# Push_swap
 
 [![C](https://img.shields.io/badge/Language-C-blue.svg)](https://en.wikipedia.org/wiki/C_(programming_language))
 [![Makefile](https://img.shields.io/badge/Build-Makefile-brightgreen.svg)](https://www.gnu.org/software/make/)
 
-This project is part of the curriculum at [42 Network](https://42.fr/), designed to deepen understanding of sorting algorithms, data structures, and low-level operations by implementing a sorting program with specific constraints.
+This project is part of the curriculum at [42 school](https://42.fr/), designed to deepen understanding of sorting algorithms, data structures, and low-level operations by implementing a sorting program with specific constraints.
 
 ## Project Goal
 
@@ -33,7 +32,7 @@ The sorting algorithm must be implemented using only the following operations:
 ![Push swap demo visualization with 5 numbers](img/push_swap_5_demo.gif)
 
 ```
-# Example: Sorting 5 2 4 1 3
+# Example: Sorting 5 2 4 1 3 (shown visually above)
 ./push_swap 5 2 4 1 3
 pb
 pb
