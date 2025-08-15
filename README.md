@@ -96,7 +96,10 @@ Here is a visual example for 100 numbers (sorted in 600 operations):
 
 ## Algorithm and Implementation Details
 
-The standard sorting algorithms (like Bubble Sort, Quick Sort, Merge Sort) are generally inefficient or impractical under the strict constraints of push_swap (limited operations, two stacks, no direct random access). Therefore, this project implements a custom algorithm tailored to minimize the number of push_swap operations.
+<p>
+    The standard sorting algorithms (like Bubble Sort, Quick Sort, Merge Sort) are generally inefficient or impractical under the strict constraints of push_swap (limited operations, two stacks, no direct random access). Therefore, this project implements a custom algorithm tailored to minimize the number of push_swap operations.
+   <img src="https://page-views-counter-534232554413.europe-west1.run.app/view?src=github.com&src_uri=/alimnaqvi/push_swap" style="display: none;" />
+</p>
 
 1.  **Data Structure:**
     *   Stacks `A` and `B` are implemented using singly linked lists (`t_list` struct defined in `push_swap.h`). This allows efficient push/pop/rotate operations at the head/tail of the list.
